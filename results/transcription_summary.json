@@ -1,0 +1,59 @@
+{
+  "model": "ai4bharat/indic-conformer-600m-multilingual",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "precision": "FP16 AMP",
+  "language": "hi",
+  "decoder": "ctc",
+  "splits": {
+    "train": {
+      "split": "train",
+      "samples_in_manifest": 4423,
+      "samples_evaluated": 4423,
+      "failed": 0,
+      "missing_audio": 0,
+      "missing_reference": 0,
+      "average_wer": 0.12442888101599263,
+      "average_cer": 0.08629083680529125,
+      "average_inference_seconds": 0.13425463859356254,
+      "average_audio_seconds": 5.8284032330997055,
+      "real_time_factor": 0.023034548781924655,
+      "total_audio_seconds": 25779.027499999997,
+      "total_inference_seconds": 593.8082664993271,
+      "processing_time_seconds": 647.5791727000033
+    },
+    "validation": {
+      "split": "validation",
+      "samples_in_manifest": 553,
+      "samples_evaluated": 553,
+      "failed": 0,
+      "missing_audio": 0,
+      "missing_reference": 0,
+      "average_wer": 0.10075158259441601,
+      "average_cer": 0.0661253235798233,
+      "average_inference_seconds": 0.13337798155506334,
+      "average_audio_seconds": 6.662747739602164,
+      "real_time_factor": 0.020018464868824134,
+      "total_audio_seconds": 3684.4994999999967,
+      "total_inference_seconds": 73.75802379995002,
+      "processing_time_seconds": 80.64254819999042
+    },
+    "test": {
+      "split": "test",
+      "samples_in_manifest": 553,
+      "samples_evaluated": 553,
+      "failed": 0,
+      "missing_audio": 0,
+      "missing_reference": 0,
+      "average_wer": 0.13197166532290885,
+      "average_cer": 0.09991787004163612,
+      "average_inference_seconds": 0.14627077866220492,
+      "average_audio_seconds": 4.3933601943942096,
+      "real_time_factor": 0.0332936003856096,
+      "total_audio_seconds": 2429.528187499998,
+      "total_inference_seconds": 80.88774060019932,
+      "processing_time_seconds": 82.68677759999991
+    }
+  },
+  "total_processing_time_seconds": 811.0598782999878
+}
