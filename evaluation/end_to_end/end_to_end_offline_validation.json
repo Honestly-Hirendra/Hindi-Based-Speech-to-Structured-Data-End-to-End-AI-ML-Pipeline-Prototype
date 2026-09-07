@@ -1,0 +1,211 @@
+{
+  "audit": "BlueHyreAI Offline End-to-End Production Validation",
+  "status": "PASS",
+  "started_at": "2026-09-03T19:18:24",
+  "inputs": {
+    "extraction_test": "F:\\BlueHyre Project Final\\03_Extraction\\Results\\01_extraction_v5_1\\test.csv",
+    "screening_final": "F:\\BlueHyre Project Final\\02_Screening\\Result\\screening_interviews_final.csv",
+    "questions": 4
+  },
+  "checks": [
+    {
+      "name": "extraction_test_exists",
+      "pass": true,
+      "detail": "F:\\BlueHyre Project Final\\03_Extraction\\Results\\01_extraction_v5_1\\test.csv"
+    },
+    {
+      "name": "screening_final_exists",
+      "pass": true,
+      "detail": "F:\\BlueHyre Project Final\\02_Screening\\Result\\screening_interviews_final.csv"
+    },
+    {
+      "name": "fixture_question_count",
+      "pass": true,
+      "detail": "constructed=4 required=4"
+    },
+    {
+      "name": "fixture_question_ids_unique",
+      "pass": true,
+      "detail": "all selected question IDs are unique"
+    },
+    {
+      "name": "fixture_questions_are_screening_final",
+      "pass": true,
+      "detail": "every production question is present in Screening final output"
+    },
+    {
+      "name": "interview_request_valid",
+      "pass": true,
+      "detail": "InterviewRequest constructed and validated by Pydantic"
+    },
+    {
+      "name": "production_pipeline_initialized",
+      "pass": true,
+      "detail": "BlueHyrePipeline initialized successfully"
+    },
+    {
+      "name": "pipeline_response_type",
+      "pass": true,
+      "detail": "actual=PipelineResponse"
+    },
+    {
+      "name": "status_success",
+      "pass": true,
+      "detail": "status=success"
+    },
+    {
+      "name": "candidate_id_preserved",
+      "pass": true,
+      "detail": "expected=E2E-OFFLINE-CANDIDATE-001 actual=E2E-OFFLINE-CANDIDATE-001"
+    },
+    {
+      "name": "job_id_preserved",
+      "pass": true,
+      "detail": "expected=E2E-OFFLINE-JOB-001 actual=E2E-OFFLINE-JOB-001"
+    },
+    {
+      "name": "candidate_state_present",
+      "pass": true,
+      "detail": "CandidateState object present"
+    },
+    {
+      "name": "candidate_state_has_information",
+      "pass": true,
+      "detail": "final CandidateState contains usable candidate information"
+    },
+    {
+      "name": "candidate_state_to_resume_text_nonempty",
+      "pass": true,
+      "detail": "resume_text_length=569"
+    },
+    {
+      "name": "job_requirement_to_job_text_nonempty",
+      "pass": true,
+      "detail": "job_text_length=349"
+    },
+    {
+      "name": "matching_present",
+      "pass": true,
+      "detail": "MatchingResult object present"
+    },
+    {
+      "name": "matching_classification_valid",
+      "pass": true,
+      "detail": "classification=NO_FIT"
+    },
+    {
+      "name": "matching_scores_present",
+      "pass": true,
+      "detail": "scores={'NO_FIT': -0.18467049064717045, 'POTENTIAL_FIT': -0.1527882416304993, 'GOOD_FIT': -0.5695446081232309}"
+    },
+    {
+      "name": "matching_model_version",
+      "pass": true,
+      "detail": "model_version=V6"
+    },
+    {
+      "name": "pipeline_metadata_present",
+      "pass": true,
+      "detail": "pipeline_metadata={'transcription_source': 'provided_interview_qa', 'extraction_model': 'gemma-3-1b-it-qlora-run5', 'semantic_router': 'deterministic_v1', 'matching_model': 'bluehyre_v6'}"
+    },
+    {
+      "name": "empty_answer_fails_safely",
+      "pass": true,
+      "detail": "raised=ValueError: Candidate extraction produced no usable information across the interview."
+    }
+  ],
+  "fixture": {
+    "questions": [
+      {
+        "question_id": "BH-00009",
+        "question": "यदि आप किसी संवेदनशील प्रोजेक्ट पर काम कर रहे हैं और उसमें देरी हो जाती है, तो आप उस जानकारी को साझा किए बिना जिसे प्राइवेट रखा जाना है, इस समस्या के बारे में कैसे बात करते हैं और अन्य टीमों के साथ कैसे काम करते हैं?",
+        "answer": "एनडीए के वजह से मैं डीटेल्स नहीं बता सकता, लेकिन मैं दूसरी टीम को बस ये बोलूँगा कि डिले है। हम अपने काम को फोकस के साथ करेंगे ताकि एनडीए भी मेंटेन रहे।"
+      },
+      {
+        "question_id": "BH-00015",
+        "question": "यदि आपको किसी ऐसी समस्या को ठीक करने का काम दिया जाता है जो बार-बार हो रही है और जो आपकी अन्य जिम्मेदारियों के साथ भी टकरा रही है, तो आप यह सुनिश्चित करने के लिए अपने काम को कैसे व्यवस्थित करते हैं कि सब कुछ भरोसेमंद तरीके से हो जाए?",
+        "answer": "माइग्रेशन क्रिटिकल है। मैं रिसोर्स कंटेंशन फिक्स करने के लिए प्रोसेस ऑप्टिमाइज़ करूँगा और बाकी टीम्स को डेडलाइन के बारे में अपडेट रखूँगा।"
+      },
+      {
+        "question_id": "BH-00018",
+        "question": "यदि आपके पास एक सख्त डेडलाइन है और आप कोई बड़ी समस्या पाते हैं, तो आप समय पर काम पूरा करने के दबाव और काम को सही तरीके से करने की आवश्यकता के बीच संतुलन कैसे बनाते हैं?",
+        "answer": "सिक्योरिटी अपडेट में रिस्क नहीं ले सकते। मैं क्यूए (QA) के साथ बैठकर इश्यू रूट कॉज़ निकालूँगा और फिर फास्ट ट्रैक फिक्स करूँगा।"
+      },
+      {
+        "question_id": "BH-00020",
+        "question": "यदि आप यह बेहतर बनाने की कोशिश कर रहे हैं कि आपका काम कितनी जल्दी पूरा हो, लेकिन एक सहकर्मी चिंतित है कि इससे सटीकता कम हो सकती है, तो आप उस असहमति को कैसे हल करते हैं?",
+        "answer": "परफॉरमेंस ज़रूरी है, पर एक्यूरेसी भी। मैं डेटा साइंटिस्ट से बात करके देखता हूँ कि रिट्रेन के बिना कोई बीच का रास्ता है क्या।"
+      }
+    ]
+  },
+  "positive_case": {
+    "resume_text": "BEHAVIORAL\nproblem_solving: ['optimize process', 'QA', 'retrain_without_accuracy']\ncommunication: ['inform other team', 'माइग्रेशन क्रिटिकल है। मैं रिसोर्स कंटेंशन फिक्स करने के लिए प्रोसेस ऑप्टिमाइज़ करूँगा और बाकी टीम्स को डेडलाइन के बारे में अपडेट रखूँगा।', 'सिक्योरिटी अपडेट में रिस्क नहीं ले सकते। मैं क्यूए (QA) के साथ बैठकर इश्यू रूट कॉज़ निकालूँगा और फिर फास्ट ट्रैक फिक्स करूँगा।']\nconflict_resolution: परफॉरमेंस ज़रूरी है, पर एक्यूरेसी भी। मैं डेटा साइंटिस्ट से बात करके देखता हूँ कि रिट्रेन के बिना कोई बीच का रास्ता है क्या।\nOTHER_EXPLICIT_FACTS\nreason: NDA",
+    "job_text": "title: Backend Software Engineer\ndescription: Backend engineering role involving API development, production systems and reliable software delivery.\nrequired_skills: ['Python', 'SQL', 'API development']\npreferred_skills: ['FastAPI', 'Docker', 'Git']\nminimum_experience: 2 years\neducation_requirement: B.Tech or equivalent\njob_id: E2E-OFFLINE-JOB-001",
+    "response": {
+      "status": "success",
+      "candidate_id": "E2E-OFFLINE-CANDIDATE-001",
+      "job_id": "E2E-OFFLINE-JOB-001",
+      "candidate_state": {
+        "profile": {
+          "experience": null,
+          "previous_responsibilities": null,
+          "skills": null,
+          "education_certifications": null
+        },
+        "behavioral": {
+          "problem_solving": [
+            "optimize process",
+            "QA",
+            "retrain_without_accuracy"
+          ],
+          "teamwork": null,
+          "communication": [
+            "inform other team",
+            "माइग्रेशन क्रिटिकल है। मैं रिसोर्स कंटेंशन फिक्स करने के लिए प्रोसेस ऑप्टिमाइज़ करूँगा और बाकी टीम्स को डेडलाइन के बारे में अपडेट रखूँगा।",
+            "सिक्योरिटी अपडेट में रिस्क नहीं ले सकते। मैं क्यूए (QA) के साथ बैठकर इश्यू रूट कॉज़ निकालूँगा और फिर फास्ट ट्रैक फिक्स करूँगा।"
+          ],
+          "conflict_resolution": "परफॉरमेंस ज़रूरी है, पर एक्यूरेसी भी। मैं डेटा साइंटिस्ट से बात करके देखता हूँ कि रिट्रेन के बिना कोई बीच का रास्ता है क्या।",
+          "prioritization": null
+        },
+        "availability": {
+          "availability": null,
+          "notice_period": null,
+          "salary_expectations": null
+        },
+        "motivation": null,
+        "role_fit": null,
+        "other_explicit_facts": {
+          "reason": "NDA"
+        }
+      },
+      "matching": {
+        "classification": "NO_FIT",
+        "decision_scores": {
+          "NO_FIT": -0.18467049064717045,
+          "POTENTIAL_FIT": -0.1527882416304993,
+          "GOOD_FIT": -0.5695446081232309
+        },
+        "potential_margin": 0.3,
+        "model_version": "V6",
+        "model_type": "TF-IDF + LinearSVC"
+      },
+      "pipeline": {
+        "transcription_source": "provided_interview_qa",
+        "extraction_model": "gemma-3-1b-it-qlora-run5",
+        "semantic_router": "deterministic_v1",
+        "matching_model": "bluehyre_v6"
+      }
+    },
+    "elapsed_ms": 119023.662
+  },
+  "negative_case": {
+    "expected": "pipeline must reject an interview with no usable candidate information",
+    "passed": true,
+    "elapsed_ms": 1.481,
+    "exception_type": "ValueError",
+    "exception": "Candidate extraction produced no usable information across the interview."
+  },
+  "error": null,
+  "elapsed_total_ms": 135813.176,
+  "finished_at": "2026-09-03T19:20:40"
+}
