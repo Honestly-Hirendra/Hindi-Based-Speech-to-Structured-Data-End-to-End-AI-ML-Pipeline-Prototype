@@ -1,0 +1,21 @@
+{
+  "model": "ai4bharat/indic-conformer-600m-multilingual",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "precision": "FP16 AMP",
+  "decoder": "ctc",
+  "test_samples": 553,
+  "samples_evaluated": 553,
+  "failed": 0,
+  "missing_audio": 0,
+  "missing_reference": 0,
+  "average_wer": 0.13197166532290885,
+  "average_cer": 0.09991787004163612,
+  "average_inference_seconds": 0.15787873327272425,
+  "average_audio_seconds": 4.3933601943942096,
+  "real_time_factor": 0.035935759028857366,
+  "total_audio_seconds": 2429.528187499998,
+  "total_inference_seconds": 87.30693949981651,
+  "processing_time_seconds": 93.959978400002,
+  "peak_gpu_memory_gb": 0.024062156677246094
+}

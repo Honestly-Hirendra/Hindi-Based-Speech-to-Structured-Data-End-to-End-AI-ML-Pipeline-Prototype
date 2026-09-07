@@ -1,0 +1,16 @@
+{
+  "split": "test",
+  "samples_in_manifest": 553,
+  "samples_evaluated": 553,
+  "failed": 0,
+  "missing_audio": 0,
+  "missing_reference": 0,
+  "average_wer": 0.13197166532290885,
+  "average_cer": 0.09991787004163612,
+  "average_inference_seconds": 0.14627077866220492,
+  "average_audio_seconds": 4.3933601943942096,
+  "real_time_factor": 0.0332936003856096,
+  "total_audio_seconds": 2429.528187499998,
+  "total_inference_seconds": 80.88774060019932,
+  "processing_time_seconds": 82.68677759999991
+}
