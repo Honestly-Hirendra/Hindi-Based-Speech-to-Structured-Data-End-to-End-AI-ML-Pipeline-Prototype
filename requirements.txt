@@ -1,0 +1,34 @@
+# Core scientific computing
+numpy
+pandas
+scipy
+
+# Machine learning
+scikit-learn
+xgboost
+
+# Deep learning / NLP
+torch
+transformers
+accelerate
+peft
+bitsandbytes
+datasets
+sentencepiece
+tokenizers
+
+# Speech recognition / audio
+soundfile
+librosa
+
+# Data / utilities
+PyYAML
+python-dotenv
+tqdm
+
+# Visualization / notebooks
+matplotlib
+seaborn
+openpyxl
+jupyter
+ipykernel
