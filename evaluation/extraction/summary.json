@@ -1,0 +1,64 @@
+{
+  "experiment": "run5",
+  "dataset": "llama_extraction_v5_1",
+  "dataset_version": "BlueHyreAI Extraction V5.1",
+  "schema_type": "hierarchical_context_corrected",
+  "model": "google/gemma-3-1b-it",
+  "train_examples": 7098,
+  "validation_examples": 888,
+  "test_examples": 888,
+  "training": {
+    "epochs": 1,
+    "micro_batch_size": 4,
+    "gradient_accumulation_steps": 6,
+    "effective_batch_size": 24,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "max_seq_length": 512,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "optimizer": "adamw_8bit",
+    "resume": false
+  },
+  "parameters": {
+    "total": 675994752,
+    "trainable": 13045760,
+    "trainable_percentage": 1.929861135963375
+  },
+  "metrics": {
+    "train": {
+      "train_runtime": 4715.9139,
+      "train_samples_per_second": 1.505,
+      "train_steps_per_second": 0.063,
+      "total_flos": 1.788421080432384e+16,
+      "train_loss": 0.47897665202617645,
+      "epoch": 1.0
+    },
+    "validation": {
+      "eval_loss": 0.31733566522598267,
+      "eval_runtime": 84.1212,
+      "eval_samples_per_second": 10.556,
+      "eval_steps_per_second": 2.639,
+      "eval_num_tokens": 4032612.0,
+      "epoch": 1.0
+    }
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "total_vram_gb": 7.99560546875,
+    "peak_allocated_vram_gb": 4.999844074249268,
+    "peak_reserved_vram_gb": 13.3671875
+  },
+  "runtime": {
+    "training_seconds": 4716.997919797897,
+    "training_hours": 1.3102771999438603
+  },
+  "artifacts": {
+    "output_dir": "E:\\Data gathering\\InterviewForge\\Fine_Tuning data\\gemma3_1b_qlora_run5",
+    "final_adapter": "E:\\Data gathering\\InterviewForge\\Fine_Tuning data\\gemma3_1b_qlora_run5\\final_adapter",
+    "summary": "E:\\Data gathering\\InterviewForge\\Fine_Tuning data\\gemma3_1b_qlora_run5\\training_summary.json"
+  },
+  "test_used_during_training": false
+}
