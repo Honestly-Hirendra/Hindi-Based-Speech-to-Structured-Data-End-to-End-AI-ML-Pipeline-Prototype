@@ -1,0 +1,35 @@
+{
+  "version": "V6",
+  "model_type": "TF-IDF + LinearSVC",
+  "input_file": "F:\\Screening data\\bluehyre_matching\\job_resume_fit_labeled.csv",
+  "rows": 2384,
+  "train_rows": 1907,
+  "validation_rows": 238,
+  "test_rows": 239,
+  "word_features": 150000,
+  "char_features": 128402,
+  "total_features": 278402,
+  "C": 0.25,
+  "selected_potential_margin": 0.3,
+  "validation": {
+    "baseline_accuracy": 0.680672268907563,
+    "baseline_macro_f1": 0.6611913326915607,
+    "baseline_false_potential": 46,
+    "selected_accuracy": 0.6554621848739496,
+    "selected_macro_f1": 0.6508198601077858,
+    "selected_false_potential": 35,
+    "selected_no_to_potential": 18,
+    "selected_good_to_potential": 17
+  },
+  "test": {
+    "accuracy": 0.7322175732217573,
+    "macro_f1": 0.726433163933164,
+    "macro_precision": 0.7240560640732264,
+    "macro_recall": 0.7293222844693433,
+    "false_potential": 29,
+    "no_to_potential": 16,
+    "good_to_potential": 13,
+    "potential_recall": 0.7226890756302521
+  },
+  "timestamp": "2026-09-01T12:33:33.536746"
+}

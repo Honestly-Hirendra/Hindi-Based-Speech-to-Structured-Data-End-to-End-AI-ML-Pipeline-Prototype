@@ -1,0 +1,136 @@
+
+======================================================================
+BLUEHYREAI - V6 TRAINING REPORT
+======================================================================
+
+MODEL
+----------------------------------------------------------------------
+TF-IDF + Linear SVM
+C = 0.25
+
+OBJECTIVE
+----------------------------------------------------------------------
+Reduce false POTENTIAL_FIT predictions while retaining reasonable
+POTENTIAL_FIT recall and overall classification quality.
+
+INPUT
+----------------------------------------------------------------------
+F:\Screening data\bluehyre_matching\job_resume_fit_labeled.csv
+
+DATASET
+----------------------------------------------------------------------
+Total rows: 2384
+
+Train rows: 1907
+Validation rows: 238
+Test rows: 239
+
+FEATURES
+----------------------------------------------------------------------
+Word features: 150000
+Character features: 128402
+Total features: 278402
+
+DECISION BOUNDARY
+----------------------------------------------------------------------
+Selected POTENTIAL_FIT margin:
+0.300000
+
+The margin was selected exclusively on the validation set.
+
+VALIDATION
+----------------------------------------------------------------------
+Baseline accuracy:
+0.6807
+
+Baseline Macro F1:
+0.6612
+
+Baseline false POTENTIAL:
+46
+
+V6 validation accuracy:
+0.6555
+
+V6 validation Macro F1:
+0.6508
+
+V6 validation false POTENTIAL:
+35
+
+V6 validation NO -> POTENTIAL:
+18
+
+V6 validation GOOD -> POTENTIAL:
+17
+
+V6 validation POTENTIAL recall:
+0.6218
+
+FINAL TEST
+----------------------------------------------------------------------
+Accuracy:
+0.7322
+
+Macro F1:
+0.7264
+
+Macro Precision:
+0.7241
+
+Macro Recall:
+0.7293
+
+FALSE POTENTIAL
+----------------------------------------------------------------------
+NO_FIT -> POTENTIAL_FIT:
+16
+
+GOOD_FIT -> POTENTIAL_FIT:
+13
+
+TOTAL FALSE POTENTIAL:
+29
+
+POTENTIAL_FIT RECALL:
+0.7227
+
+COMPARISON
+----------------------------------------------------------------------
+V5 reported test accuracy:
+0.7322
+
+V5 reported test Macro F1:
+0.7233
+
+V5 reported false POTENTIAL:
+30
+
+V6 test accuracy:
+0.7322
+
+V6 test Macro F1:
+0.7264
+
+V6 false POTENTIAL:
+29
+
+False POTENTIAL change relative to V5:
+-1
+
+======================================================================
+IMPORTANT METHODOLOGICAL NOTE
+======================================================================
+
+V6 does NOT use the original dataset's AI matching score,
+skill-string score, fuzzy score, resume skill list, or job-required
+skill list as model inputs.
+
+The fit labels are the derived labels in the labeled training
+dataset.
+
+The V6 decision margin is selected using validation data only.
+
+The final test set is not used for model or boundary selection.
+
+======================================================================

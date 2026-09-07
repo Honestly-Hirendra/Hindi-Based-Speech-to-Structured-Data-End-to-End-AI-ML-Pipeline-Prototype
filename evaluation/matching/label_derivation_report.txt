@@ -1,0 +1,85 @@
+========================================================================
+BLUEHYRE RELATIVE FIT-LABEL DERIVATION REPORT
+========================================================================
+
+SOURCE
+F:\Screening data\job_resume_fit.csv
+
+OUTPUT
+F:\Screening data\bluehyre_matching\job_resume_fit_labeled.csv
+
+DATASET SIZE
+Original rows          : 2,385
+Rows with valid score  : 2,385
+Invalid-score rows     : 0
+Empty-resume rows removed: 1
+Final rows             : 2,384
+
+FINAL MODEL INPUT FIELDS
+  ID
+  resume_text
+  job_text
+  category
+  job_required_skills
+  resume_skill_list
+  fit_label
+
+REMOVED EXTERNAL FIELDS
+  ai_match_score
+  ai_matched_skills
+  skill_string_match_score
+  fuzzy_match_score
+
+RELATIVE LABEL METHODOLOGY
+Labels are derived from the distribution of the source ai_match_score.
+Bottom 30% of valid scores -> NO_FIT
+Middle 50% of valid scores -> POTENTIAL_FIT
+Top 20% of valid scores -> GOOD_FIT
+
+DERIVED SCORE CUT-OFFS
+NO_FIT upper cutoff       : 24.8780
+GOOD_FIT lower cutoff     : 69.3400
+
+FIT LABEL DISTRIBUTION
+NO_FIT         :   715 (29.99%)
+POTENTIAL_FIT  :  1190 (49.92%)
+GOOD_FIT       :   479 (20.09%)
+
+DATA QUALITY
+Missing values      : 0
+Duplicate rows      : 0
+Duplicate IDs       : 0
+
+CATEGORY × FIT LABEL
+fit_label               NO_FIT  POTENTIAL_FIT  GOOD_FIT
+category                                               
+ACCOUNTANT                  41             76         1
+ADVOCATE                    58             59         0
+AGRICULTURE                 54              9         0
+ARTS                        41             60         2
+AUTOMOBILE                  23             12         1
+AVIATION                    29             81         6
+BANKING                     10             84        21
+BPO                          0             19         3
+BUSINESS-DEVELOPMENT         2             49        68
+CHEF                         5             39        74
+CONSTRUCTION                25             65        22
+CONSULTANT                  20             84        11
+DESIGNER                    85             21         1
+DIGITAL-MEDIA                8             77        11
+ENGINEERING                 92             26         0
+FINANCE                     12             78        28
+FITNESS                     26             80        11
+HEALTHCARE                  90             25         0
+HR                           0             24        86
+INFORMATION-TECHNOLOGY       8             51        61
+PUBLIC-RELATIONS             1             53        57
+SALES                       66             41         9
+TEACHER                     19             77         6
+
+METHODOLOGICAL NOTE
+The source ai_match_score was used only to derive relative fit labels.
+The score itself is excluded from the final model-input dataset.
+Other source AI-generated matching fields are also excluded.
+The derived fit labels are weak supervision labels and are not independently human-verified ground truth.
+The original source dataset remains unchanged.
